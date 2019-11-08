@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Map
+    uniqueID: 2573196485
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Actor
+    uniqueID: 3800238457
     locked: 0
