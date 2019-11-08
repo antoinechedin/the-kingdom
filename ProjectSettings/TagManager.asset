@@ -13,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - PNJ
   - 
   - 
   - 
@@ -44,6 +44,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Blocking
+    uniqueID: 3981389345
+    locked: 0
   - name: Actor
     uniqueID: 3800238457
+    locked: 0
+  - name: Foreground
+    uniqueID: 2386928583
     locked: 0
