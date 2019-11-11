@@ -4,15 +4,15 @@ using UnityEngine;
 public class Enemy : Actor
 {
     public PathfindingManager pm;
-    private GameObject target;
+    private GameObject player;
     private List<Cell> path;
 
     public float moveSpeed;
 
     private void Start()
     {
-        target = GameObject.FindGameObjectWithTag("Player");
-        path = pm.FindPath(transform.position, target.transform.position);
+        player = GameObject.FindGameObjectWithTag("Player");
+        path = pm.FindPath(transform.position, player.transform.position);
     }
 
     private void Update()
@@ -29,10 +29,10 @@ public class Enemy : Actor
             moveVec *= moveSpeed;
 
             if (distance < 0.2f)
-                path = pm.FindPath(transform.position, target.transform.position);
+                path = pm.FindPath(transform.position, player.transform.position);
         }
         else
-            path = pm.FindPath(transform.position, target.transform.position);
+            path = pm.FindPath(transform.position, player.transform.position);
         // if ((path[0].worldPos - transform.position).magnitude < 0.3f)
         // {
         //     Debug.Log("Catch");
@@ -47,6 +47,9 @@ public class Enemy : Actor
 
         if (moveVec.x > 0) sr.flipX = false;
         if (moveVec.x < 0) sr.flipX = true;
-        animator.SetFloat("Speed", moveVec.magnitude);
+        if (transform.position.y < player.transform.position.y) sr.sortingOrder = 1;
+        else sr.sortingOrder = -1;
+
+        animator.SetFloat("Speed", moveVec.magnitude / moveSpeed);
     }
 }

@@ -16,7 +16,7 @@ public class Player : Actor
 
         if (moveVec.x > 0) sr.flipX = false;
         if (moveVec.x < 0) sr.flipX = true;
-        animator.SetFloat("Speed", moveVec.magnitude);
+        animator.SetFloat("Speed", moveDir.magnitude);
     }
 }
 

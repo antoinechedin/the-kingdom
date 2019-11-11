@@ -155,7 +155,7 @@ TextureImporter:
     21300300: 0x72_DungeonTilesetII_v1.3_150
     21300302: 0x72_DungeonTilesetII_v1.3_151
     21300304: 0x72_DungeonTilesetII_v1.3_152
-    21300306: 0x72_DungeonTilesetII_v1.3_153
+    21300306: Axe
     21300308: 0x72_DungeonTilesetII_v1.3_154
     21300310: 0x72_DungeonTilesetII_v1.3_155
     21300312: 0x72_DungeonTilesetII_v1.3_156
@@ -2956,26 +2956,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.3_126
-      rect:
-        serializedVersion: 2
-        x: 336
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8e56357b11b374a4a896af4e7785f869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: 0x72_DungeonTilesetII_v1.3_127
       rect:
         serializedVersion: 2
@@ -3496,13 +3476,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.3_153
+      name: Axe
       rect:
         serializedVersion: 2
-        x: 336
-        y: 400
-        width: 16
-        height: 16
+        x: 341
+        y: 401
+        width: 9
+        height: 21
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
