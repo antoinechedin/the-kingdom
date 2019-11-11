@@ -5,6 +5,7 @@ public class Actor : MonoBehaviour
 {
     protected Rigidbody2D rb;
     protected SpriteRenderer sr;
+    protected Animator animator;
 
     [SerializeField]
     protected Vector2 moveVec;
@@ -13,6 +14,7 @@ public class Actor : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()

@@ -28,7 +28,7 @@ public class Enemy : Actor
             moveVec.Normalize();
             moveVec *= moveSpeed;
 
-            if (distance < 0.3f)
+            if (distance < 0.2f)
                 path = pm.FindPath(transform.position, target.transform.position);
         }
         else
@@ -45,7 +45,8 @@ public class Enemy : Actor
         //     }
         // }
 
-        if (moveVec.x > 0) sr.flipX = true;
-        if (moveVec.x < 0) sr.flipX = false;
+        if (moveVec.x > 0) sr.flipX = false;
+        if (moveVec.x < 0) sr.flipX = true;
+        animator.SetFloat("Speed", moveVec.magnitude);
     }
 }
