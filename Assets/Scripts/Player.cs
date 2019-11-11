@@ -17,9 +17,6 @@ public class Player : Actor
         if (moveVec.x > 0) sr.flipX = false;
         if (moveVec.x < 0) sr.flipX = true;
 
-        Cell cell = pathfinding.getCellfromWorldPos(transform.position);
-        if (cell != null)
-            Debug.Log(cell.x + " " + cell.y);
     }
 }
 
