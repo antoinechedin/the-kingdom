@@ -7,6 +7,7 @@ public class Tower : MonoBehaviour
     public float viewRadius;
     public float firingRate;
     public float projectileSpeed;
+    public string targetTag;
     public LayerMask blockingLayer;
 
     public GameObject arrowPrefab;
@@ -32,7 +33,7 @@ public class Tower : MonoBehaviour
         else
         {
             float distance = viewRadius;
-            foreach (GameObject tempTarget in GameObject.FindGameObjectsWithTag("Player"))
+            foreach (GameObject tempTarget in GameObject.FindGameObjectsWithTag(targetTag))
             {
                 float tempDist = Vector3.Distance(tempTarget.transform.position, transform.position);
                 RaycastHit2D hit = Physics2D.CircleCast(
