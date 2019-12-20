@@ -248,6 +248,7 @@ TextureImporter:
     21300486: 0x72_16x16DungeonTileset.v4_243
     21300488: 0x72_16x16DungeonTileset.v4_244
     21300490: 0x72_16x16DungeonTileset.v4_245
+    21300492: 0x72_16x16DungeonTileset.v4_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -533,8 +534,8 @@ TextureImporter:
       name: 0x72_16x16DungeonTileset.v4_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 224
+        x: 0
+        y: 240
         width: 16
         height: 16
       alignment: 0
@@ -3265,6 +3266,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c0e30389c77735342b1ec9d325940f96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 0x72_16x16DungeonTileset.v4_9
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 224
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a3d0c9ecb34eb544a1f3b57527a11a7
       vertices: []
       indices: 
       edges: []

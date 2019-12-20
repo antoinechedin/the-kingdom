@@ -1431,7 +1431,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: fec33042de20ef54a9b007eedaa8c08d, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 4cb085cebf7df5c489a99115e4d0bde1, type: 2}
+    m_Data: {fileID: 11400000, guid: 11532177386e4a243813c1cb5bf7edff, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 4b78ab4b5720cf34bb61799ef6c80fa8, type: 2}
   - m_RefCount: 1
@@ -1726,7 +1726,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 21300032, guid: f89c1814d0e41c44b89a78f2ef50f984, type: 3}
   - m_RefCount: 1
-    m_Data: {fileID: 21300034, guid: f89c1814d0e41c44b89a78f2ef50f984, type: 3}
+    m_Data: {fileID: 21300492, guid: f89c1814d0e41c44b89a78f2ef50f984, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 21300036, guid: f89c1814d0e41c44b89a78f2ef50f984, type: 3}
   - m_RefCount: 1
@@ -2082,7 +2082,7 @@ TilemapRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
-  m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
+  m_ChunkCullingBounds: {x: 0, y: 0.19999999, z: 0}
   m_MaxChunkCount: 16
   m_MaxFrameAge: 16
   m_SortOrder: 0

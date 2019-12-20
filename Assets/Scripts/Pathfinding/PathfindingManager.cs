@@ -11,7 +11,7 @@ public class PathfindingManager : MonoBehaviour
     private Cell[,] grid;
     private BoundsInt bounds;
 
-    private void Start()
+    private void Awake()
     {
         tilemap.CompressBounds();
         bounds = tilemap.cellBounds;
@@ -36,7 +36,6 @@ public class PathfindingManager : MonoBehaviour
 
     public List<Cell> FindPath(Vector2 start, Vector2 target)
     {
-
         foreach (Cell cell in grid)
         {
             if (cell == null) continue;

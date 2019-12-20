@@ -10,7 +10,7 @@ public class Actor : MonoBehaviour
     [SerializeField]
     protected Vector2 moveVec;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
