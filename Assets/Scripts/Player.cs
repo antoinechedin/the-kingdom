@@ -4,6 +4,7 @@ public class Player : Actor
 {
     public float moveSpeed;
     public PathfindingManager pathfinding;
+    public TurretSpot currentTurret = null;
 
     private void Update()
     {
@@ -17,6 +18,14 @@ public class Player : Actor
         if (moveVec.x > 0) sr.flipX = false;
         if (moveVec.x < 0) sr.flipX = true;
         animator.SetFloat("Speed", moveDir.magnitude);
+
+        if (currentTurret != null)
+        {
+            if (Input.GetButtonDown("Action"))
+            {
+                currentTurret.UpgradeTurret();
+            }
+        }
     }
 }
 
