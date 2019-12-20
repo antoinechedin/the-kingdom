@@ -28,9 +28,20 @@ public class Player : Actor
         {
             if (Input.GetButtonDown("Action"))
             {
-                currentTurret.UpgradeTurret();
+                bool upgradeSuccess = currentTurret.UpgradeTurret();
+                if (upgradeSuccess) //ou dans ce cas if (upgradeSuccess == true)
+                {
+                    Debug.Log("Amelioration effectuee");
+                }
+                else
+                {
+                    Debug.Log("Echec de l'amelioration");
+                }
             }
         }
+        
+   
     }
+
 }
 
