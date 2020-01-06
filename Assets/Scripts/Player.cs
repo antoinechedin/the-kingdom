@@ -8,44 +8,50 @@ public class Player : Actor
     public BoxCollider2D actionCollider;
     public PlayerRessources ressources;
 
+    public bool playing;
+
     protected override void Awake()
     {
         base.Awake();
         ressources = new PlayerRessources();
+        playing = true;
     }
 
     private void Update()
     {
-        Vector2 moveDir;
-        moveDir.x = Input.GetAxisRaw("Horizontal");
-        moveDir.y = Input.GetAxisRaw("Vertical");
-        float moveMag = Mathf.Clamp(moveDir.magnitude, 0f, 1f);
-        moveDir = moveDir.normalized * moveMag;
-        moveVec = moveDir * moveSpeed;
-
-        // Move action object
-        if (actionCollider != null && moveDir.magnitude > 0)
-            actionCollider.transform.localPosition = new Vector2(0, 0.5f) + moveDir.normalized / 2f;
-
-        if (moveVec.x > 0) sr.flipX = false;
-        if (moveVec.x < 0) sr.flipX = true;
-        animator.SetFloat("Speed", moveDir.magnitude);
-
-        if (currentTurret != null)
+        if (playing)
         {
-            if (Input.GetButtonDown("Action"))
+            Vector2 moveDir;
+            moveDir.x = Input.GetAxisRaw("Horizontal");
+            moveDir.y = Input.GetAxisRaw("Vertical");
+            float moveMag = Mathf.Clamp(moveDir.magnitude, 0f, 1f);
+            moveDir = moveDir.normalized * moveMag;
+            moveVec = moveDir * moveSpeed;
+
+            // Move action object
+            if (actionCollider != null && moveDir.magnitude > 0)
+                actionCollider.transform.localPosition = new Vector2(0, 0.5f) + moveDir.normalized / 2f;
+
+            if (moveVec.x > 0) sr.flipX = false;
+            if (moveVec.x < 0) sr.flipX = true;
+            animator.SetFloat("Speed", moveDir.magnitude);
+        
+            if (currentTurret != null)
             {
-                bool upgradeSuccess = currentTurret.UpgradeTurret(ref ressources);
-                if (upgradeSuccess) //ou dans ce cas if (upgradeSuccess == true)
+                if (Input.GetButtonDown("Action"))
                 {
-                    Debug.Log("Amelioration effectuee");
-                }
-                else
-                {
-                    Debug.Log("Echec de l'amelioration");
+                    bool upgradeSuccess = currentTurret.UpgradeTurret(ref ressources);
+                    if (upgradeSuccess) //ou dans ce cas if (upgradeSuccess == true)
+                    {
+                        Debug.Log("Amelioration effectuee");
+                    }
+                    else
+                    {
+                        Debug.Log("Echec de l'amelioration");
+                    }
                 }
             }
-        }   
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D thingThatCollide)

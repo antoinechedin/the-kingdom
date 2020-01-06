@@ -26,11 +26,10 @@ public class TaverneManager : MonoBehaviour
             }
         }
     }
-    private bool TestifLost ()
+    public bool TestifLost ()
     {
         if (currentHPTavern == 0)
         {
-            Debug.Log("T'as perdu gros nul");
             return true;
         }
         else return false;
