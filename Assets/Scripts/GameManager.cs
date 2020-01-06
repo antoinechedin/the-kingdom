@@ -22,9 +22,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void RestartGame()
+    public void StartGame()
     {
         SceneManager.LoadScene("Map");
+    }
+
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }

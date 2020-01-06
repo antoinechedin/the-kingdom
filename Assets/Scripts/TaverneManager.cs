@@ -28,7 +28,7 @@ public class TaverneManager : MonoBehaviour
     }
     public bool TestifLost ()
     {
-        if (currentHPTavern == 0)
+        if (currentHPTavern <= 0)
         {
             return true;
         }

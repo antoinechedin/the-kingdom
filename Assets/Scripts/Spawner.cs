@@ -4,7 +4,8 @@ public class Spawner : MonoBehaviour
 {
     public GameObject monsterPrefab;
     public PathfindingManager[] pfManagers;
-    public float spawnTime;
+    public float spawnTime0;
+    public float spawnTime10;
 
     private float timer;
     private Vector2 start;
@@ -24,6 +25,7 @@ public class Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        float spawnTime = Mathf.Lerp(spawnTime0, spawnTime10, Mathf.Min(Time.timeSinceLevelLoad / 600f, 1f)) ;
         timer += Time.deltaTime;
         if (timer > spawnTime)
         {
