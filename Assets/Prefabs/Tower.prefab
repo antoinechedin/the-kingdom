@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   viewRadius: 7.49
   firingRate: 2
-  projectileSpeed: 30
+  projectileSpeed: 60
   targetTag: Monster
   blockingLayer:
     serializedVersion: 2

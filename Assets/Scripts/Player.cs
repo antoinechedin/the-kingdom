@@ -6,6 +6,13 @@ public class Player : Actor
     public PathfindingManager pathfinding;
     public TurretSpot currentTurret = null;
     public BoxCollider2D actionCollider;
+    public PlayerRessources ressources;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        ressources = new PlayerRessources();
+    }
 
     private void Update()
     {
@@ -28,7 +35,7 @@ public class Player : Actor
         {
             if (Input.GetButtonDown("Action"))
             {
-                bool upgradeSuccess = currentTurret.UpgradeTurret();
+                bool upgradeSuccess = currentTurret.UpgradeTurret(ref ressources);
                 if (upgradeSuccess) //ou dans ce cas if (upgradeSuccess == true)
                 {
                     Debug.Log("Amelioration effectuee");
@@ -38,10 +45,22 @@ public class Player : Actor
                     Debug.Log("Echec de l'amelioration");
                 }
             }
-        }
-        
-   
+        }   
     }
 
+    private void OnTriggerEnter2D(Collider2D thingThatCollide)
+    {
+        Debug.Log("Touch");
+        if (thingThatCollide.tag == "Beer")
+        {
+            this.ressources.beer++;
+            Destroy(thingThatCollide.gameObject);
+        }
+        else if (thingThatCollide.tag == "Civilian")
+        {
+            this.ressources.civilian++;
+            Destroy(thingThatCollide.gameObject);
+        }
+    }
 }
 
