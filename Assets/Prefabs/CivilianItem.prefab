@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 33090557809560736}
   - component: {fileID: 33090557809560739}
   - component: {fileID: 33090557809560738}
+  - component: {fileID: 95603208611076474}
   m_Layer: 0
   m_Name: CivilianItem
   m_TagString: Civilian
@@ -96,3 +97,22 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.2}
   m_Size: {x: 0.9, y: 0.4}
   m_Direction: 1
+--- !u!95 &95603208611076474
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 33090557809560765}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 3238f836361fe4b418657c7e281d94b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
