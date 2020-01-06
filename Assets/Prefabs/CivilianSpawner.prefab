@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 7079123250184354717, guid: 27f6a73615e6d9c4da9c25f7b5a890ef,
         type: 3}
       propertyPath: m_Name
-      value: ItemSpawner
+      value: CivilianSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 7079123250184354720, guid: 27f6a73615e6d9c4da9c25f7b5a890ef,
         type: 3}
@@ -73,6 +73,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300078, guid: dc527035ac1cfb348b737daf4d565b8e,
         type: 3}
+    - target: {fileID: 7079123250184354723, guid: 27f6a73615e6d9c4da9c25f7b5a890ef,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7079123250184354722, guid: 27f6a73615e6d9c4da9c25f7b5a890ef,
         type: 3}
       propertyPath: itemPrefab

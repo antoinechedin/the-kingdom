@@ -177,4 +177,5 @@ MonoBehaviour:
   pfManagers:
   - {fileID: 0}
   - {fileID: 0}
-  spawnTime: 1
+  spawnTime0: 0
+  spawnTime10: 0

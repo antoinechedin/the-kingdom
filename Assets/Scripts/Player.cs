@@ -47,7 +47,7 @@ public class Player : Actor
                 }
             }
         }
-        
+
         moveVec = moveDir * moveSpeed;
         if (moveVec.x > 0) sr.flipX = false;
         if (moveVec.x < 0) sr.flipX = true;
@@ -56,7 +56,6 @@ public class Player : Actor
 
     private void OnTriggerEnter2D(Collider2D thingThatCollide)
     {
-        Debug.Log("Touch");
         if (thingThatCollide.tag == "Beer")
         {
             this.ressources.beer++;
