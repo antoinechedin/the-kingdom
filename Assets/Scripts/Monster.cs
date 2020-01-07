@@ -6,6 +6,8 @@ public class Monster : Actor
     public int maxLife;
     public PathfindingManager pm;
     public Vector2 target;
+
+    public bool followPlayer;
     private List<Cell> path;
 
     public float moveSpeed;
@@ -23,6 +25,7 @@ public class Monster : Actor
 
     private void Start()
     {
+        if (followPlayer) target = GameObject.FindGameObjectWithTag("Player").transform.position;
         path = pm.FindPath(transform.position, target);
     }
 
@@ -36,6 +39,8 @@ public class Monster : Actor
 
     private void Update()
     {
+        if (followPlayer) target = GameObject.FindGameObjectWithTag("Player").transform.position;
+
         moveVec = Vector2.zero;
 
         if (path != null)
@@ -53,8 +58,14 @@ public class Monster : Actor
                 if (distance < 0.2f)
                 {
                     path.RemoveAt(0);
+                    if (followPlayer) path = pm.FindPath(transform.position, target);
                 }
             }
+            if (path.Count == 0 && followPlayer)
+            {
+                path = pm.FindPath(transform.position, target);
+            }
+
             if (moveVec.x > 0) sr.flipX = false;
             if (moveVec.x < 0) sr.flipX = true;
             /*if (transform.position.y < player.transform.position.y) sr.sortingOrder = 1;
