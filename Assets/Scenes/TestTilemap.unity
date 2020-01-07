@@ -184,6 +184,11 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 49013073}
+    - target: {fileID: 1142130301099891382, guid: 72fa45f5ab9ddf142930faed6e6d060b,
+        type: 3}
+      propertyPath: followPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5984793116964092627, guid: 72fa45f5ab9ddf142930faed6e6d060b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -312,6 +317,11 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 49013073}
+    - target: {fileID: 1142130301099891382, guid: 72fa45f5ab9ddf142930faed6e6d060b,
+        type: 3}
+      propertyPath: followPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5984793116964092627, guid: 72fa45f5ab9ddf142930faed6e6d060b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -2910,6 +2920,11 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 49013073}
+    - target: {fileID: 1142130301099891382, guid: 72fa45f5ab9ddf142930faed6e6d060b,
+        type: 3}
+      propertyPath: followPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5984793116964092627, guid: 72fa45f5ab9ddf142930faed6e6d060b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -6770,7 +6785,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1829218241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6904,10 +6919,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveVec: {x: 0, y: 0}
-  moveSpeed: 5
+  moveSpeed: 7
   pathfinding: {fileID: 49013073}
   currentTurret: {fileID: 0}
   actionCollider: {fileID: 0}
+  playing: 0
 --- !u!50 &1907582695
 Rigidbody2D:
   serializedVersion: 4
@@ -7082,6 +7098,11 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 49013073}
+    - target: {fileID: 1142130301099891382, guid: 72fa45f5ab9ddf142930faed6e6d060b,
+        type: 3}
+      propertyPath: followPlayer
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5984793116964092627, guid: 72fa45f5ab9ddf142930faed6e6d060b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -7230,7 +7251,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064317691}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -9061,6 +9082,11 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 49013073}
+    - target: {fileID: 1142130301099891382, guid: 72fa45f5ab9ddf142930faed6e6d060b,
+        type: 3}
+      propertyPath: followPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fa45f5ab9ddf142930faed6e6d060b, type: 3}
 --- !u!1001 &3455499841951182328
@@ -9135,6 +9161,11 @@ PrefabInstance:
       propertyPath: pm
       value: 
       objectReference: {fileID: 49013073}
+    - target: {fileID: 1142130301099891382, guid: 72fa45f5ab9ddf142930faed6e6d060b,
+        type: 3}
+      propertyPath: followPlayer
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72fa45f5ab9ddf142930faed6e6d060b, type: 3}
 --- !u!1001 &7086087426290628974
@@ -9148,6 +9179,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7086087425029051113, guid: 485e4d80921c61d4f810426028c16e87,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7086087425029051108, guid: 485e4d80921c61d4f810426028c16e87,
         type: 3}
