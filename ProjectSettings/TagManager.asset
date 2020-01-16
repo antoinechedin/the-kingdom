@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Monster
   - Wall
+  - Beer
+  - Civilian
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Monster
   - Wall
   - Projectile
-  - 
+  - PostProcessing
   - 
   - 
   - 

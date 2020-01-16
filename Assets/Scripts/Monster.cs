@@ -5,7 +5,9 @@ public class Monster : Actor
 {
     public int maxLife;
     public PathfindingManager pm;
-    private GameObject player;
+    public Vector2 target;
+
+    public bool followPlayer;
     private List<Cell> path;
 
     public float moveSpeed;
@@ -23,8 +25,8 @@ public class Monster : Actor
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        path = pm.FindPath(transform.position, player.transform.position);
+        if (followPlayer) target = GameObject.FindGameObjectWithTag("Player").transform.position;
+        path = pm.FindPath(transform.position, target);
     }
 
     public void TakeDamage(float damage)
@@ -37,39 +39,38 @@ public class Monster : Actor
 
     private void Update()
     {
+        if (followPlayer) target = GameObject.FindGameObjectWithTag("Player").transform.position;
+
         moveVec = Vector2.zero;
-        Vector3 nextTarget = transform.position;
 
-        if (path.Count > 0)
+        if (path != null)
         {
-            nextTarget = path[0].worldPos;
-            moveVec = nextTarget - transform.position;
-            float distance = moveVec.magnitude;
-            moveVec.Normalize();
-            moveVec *= moveSpeed;
+            Vector3 nextTarget = transform.position;
 
-            if (distance < 0.2f)
-                path = pm.FindPath(transform.position, player.transform.position);
+            if (path.Count > 0)
+            {
+                nextTarget = path[0].worldPos;
+                moveVec = nextTarget - transform.position;
+                float distance = moveVec.magnitude;
+                moveVec.Normalize();
+                moveVec *= moveSpeed;
+
+                if (distance < 0.2f)
+                {
+                    path.RemoveAt(0);
+                    if (followPlayer) path = pm.FindPath(transform.position, target);
+                }
+            }
+            if (path.Count == 0 && followPlayer)
+            {
+                path = pm.FindPath(transform.position, target);
+            }
+
+            if (moveVec.x > 0) sr.flipX = false;
+            if (moveVec.x < 0) sr.flipX = true;
+            /*if (transform.position.y < player.transform.position.y) sr.sortingOrder = 1;
+            else sr.sortingOrder = -1;*/
         }
-        else
-            path = pm.FindPath(transform.position, player.transform.position);
-        // if ((path[0].worldPos - transform.position).magnitude < 0.3f)
-        // {
-        //     Debug.Log("Catch");
-        //     path.RemoveAt(0);
-        //     if (path.Count == 0)
-        //     {
-        //         Debug.Log("Recalculate path");
-        //         //
-        //         Debug.Log("Path recalculated");
-        //     }
-        // }
-
-        if (moveVec.x > 0) sr.flipX = false;
-        if (moveVec.x < 0) sr.flipX = true;
-        if (transform.position.y < player.transform.position.y) sr.sortingOrder = 1;
-        else sr.sortingOrder = -1;
-
         animator.SetFloat("Speed", moveVec.magnitude / moveSpeed);
     }
 }
